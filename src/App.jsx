@@ -5,7 +5,8 @@ function App() {
   const [list, setlist] = useState('');
   const [tasks, setTasks] = useState(['studiare react', 'studiare JavaScript', 'studiare CSS']);
 
-  function handleSubmit() {
+  function handleSubmit(e) {
+    e.preventDefault()
     console.log('prova del submit');
 
   }
