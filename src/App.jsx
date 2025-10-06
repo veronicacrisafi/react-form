@@ -7,13 +7,15 @@ function App() {
 
   function handleSubmit(e) {
     e.preventDefault()
-    console.log('prova del submit');
-    console.log(list);
-
     setTasks([...tasks, list]);
     setList('')
   }
 
+  function handleClick(i) {
+    const taskFiltrate = tasks.filter((task, index) => index != i)
+    setTasks(taskFiltrate)
+
+  }
 
 
   return (
@@ -26,7 +28,7 @@ function App() {
               <div>
                 <input className='form-control' type="text" value={list} onChange={(e) => setList(e.target.value)} placeholder='scrivi la tua lista' />
               </div>
-              <button className='btn btn-dark' type='submit'>Add task</button>
+              <button className='btn btn-dark ms-5' type='submit'>Add task</button>
             </form>
             <ul className='list-group mt-5'>
               {tasks.map((task, i) => {
@@ -35,7 +37,7 @@ function App() {
                     <span>
                       {task}
                     </span>
-                    <button className='btn btn-danger'>
+                    <button className='btn btn-danger' onClick={() => handleClick(i)}>
                       <i className="bi bi-trash3"></i>
                     </button>
                   </li>
@@ -44,7 +46,7 @@ function App() {
             </ul>
           </div>
         </div>
-      </div>
+      </div >
     </>
   )
 }
