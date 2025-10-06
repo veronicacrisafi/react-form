@@ -1,3 +1,5 @@
+import ItemListCard from "./ItemListCard"
+
 export default function ListCard({ handleSubmit, list, setList, tasks, handleClick }) {
 
     return (
@@ -15,14 +17,14 @@ export default function ListCard({ handleSubmit, list, setList, tasks, handleCli
                     <ul className='list-group mt-5'>
                         {tasks.map((task, i) => {
                             return (
-                                <li key={i} className='list-group-item d-flex justify-content-between'>
-                                    <span>
-                                        {task}
-                                    </span>
-                                    <button className='btn btn-danger' onClick={() => handleClick(i)}>
-                                        <i className="bi bi-trash3"></i>
-                                    </button>
-                                </li>
+
+                                <ItemListCard
+                                    key={i}
+                                    task={task}
+                                    elimina={() => handleClick(i)}
+
+                                />
+
                             )
                         })}
                     </ul>
