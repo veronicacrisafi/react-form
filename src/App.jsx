@@ -10,6 +10,10 @@ function App() {
       <form>
 
         <input type="text" value={list} onChange={(e) => setlist(e.target.value)} placeholder='scrivi la tua lista' />
+        <button>Add task</button>
+        <ul>
+          <li></li>
+        </ul>
 
       </form>
     </>
