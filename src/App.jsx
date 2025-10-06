@@ -31,7 +31,14 @@ function App() {
             <ul className='list-group mt-5'>
               {tasks.map((task, i) => {
                 return (
-                  <li key={i} className='list-group-item'>{task}</li>
+                  <li key={i} className='list-group-item d-flex justify-content-between'>
+                    <span>
+                      {task}
+                    </span>
+                    <button className='btn btn-danger'>
+                      <i className="bi bi-trash3"></i>
+                    </button>
+                  </li>
                 )
               })}
             </ul>
