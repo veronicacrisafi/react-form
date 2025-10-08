@@ -4,16 +4,11 @@ import NewItemForm from './components/NewItemForm';
 
 
 function App() {
-  const [list, setList] = useState('');
-  console.log(list);
+
 
   const [tasks, setTasks] = useState(['studiare react', 'studiare JavaScript', 'studiare CSS']);
 
-  function handleSubmit(e) {
-    e.preventDefault()
-    setTasks([...tasks, list]);
-    setList('')
-  }
+
 
   function handleClick(i) {
     const taskFiltrate = tasks.filter((task, index) => index != i)

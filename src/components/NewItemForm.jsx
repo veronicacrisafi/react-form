@@ -1,5 +1,11 @@
+import { useState } from "react"
 export default function NewItemForm({ }) {
-
+    const [list, setList] = useState('');
+    function handleSubmit(e) {
+        e.preventDefault()
+        setTasks([...tasks, list]);
+        setList('')
+    }
 
     return (
         <form onSubmit={handleSubmit} className='d-flex align-items-center'>
