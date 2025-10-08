@@ -21,9 +21,9 @@ function App() {
   return (
     <>
       <div className='container'>
-        <h1>To Do List</h1>
-        <div className='card'>
-          <div className="card-body">
+        <h1 className='text-center'>To Do List</h1>
+        <div className='card m-auto '>
+          <div className="card-body ">
             <NewItemForm addTask={addTask} />
 
             <ListCard handleClick={handleClick}

@@ -8,7 +8,7 @@ export default function NewItemForm({ addTask }) {
     }
 
     return (
-        <form onSubmit={handleSubmit} className='d-flex align-items-center'>
+        <form onSubmit={handleSubmit} className='d-flex justify-content-center align-items-center m-4'>
             <div>
                 <input className='form-control' type="text" value={list} onChange={(e) => setList(e.target.value)} placeholder='scrivi la tua lista' />
             </div>
