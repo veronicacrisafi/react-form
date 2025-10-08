@@ -6,9 +6,9 @@ import NewItemForm from './components/NewItemForm';
 function App() {
 
 
-  const [tasks, setTasks] = useState(['studiare react', 'studiare JavaScript', 'studiare CSS']);
 
   function addTask(newTask) { setTasks([...tasks, newTask]) }
+  const [tasks, setTasks] = useState(['studiare react', 'studiare JavaScript', 'studiare CSS']);
 
   function handleClick(i) {
     const taskFiltrate = tasks.filter((task, index) => index != i)
@@ -17,14 +17,18 @@ function App() {
   }
 
 
+
   return (
     <>
       <div className='container'>
+        <h1>To Do List</h1>
         <div className='card'>
           <div className="card-body">
             <NewItemForm addTask={addTask} />
 
-            <ListCard />
+            <ListCard handleClick={handleClick}
+              tasks={tasks}
+            />
 
           </div>
         </div>
