@@ -3,7 +3,7 @@ export default function NewItemForm({ addTask }) {
     const [list, setList] = useState('');
     function handleSubmit(e) {
         e.preventDefault()
-        setTasks([...tasks, list]);
+        addTask(list);
         setList('')
     }
 
