@@ -1,9 +1,12 @@
 import { useState } from 'react'
 import ListCard from './components/ListCard';
+import NewItemForm from './components/NewItemForm';
 
 
 function App() {
   const [list, setList] = useState('');
+  console.log(list);
+
   const [tasks, setTasks] = useState(['studiare react', 'studiare JavaScript', 'studiare CSS']);
 
   function handleSubmit(e) {
@@ -21,13 +24,16 @@ function App() {
 
   return (
     <>
+      <div className='container'>
+        <div className='card'>
+          <div className="card-body">
+            <NewItemForm />
 
-      <ListCard handleSubmit={handleSubmit}
-        list={list}
-        setList={setList}
-        tasks={tasks}
-        handleClick={handleClick}
-      />
+            <ListCard />
+
+          </div>
+        </div>
+      </div>
 
     </>
   )
