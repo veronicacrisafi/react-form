@@ -1,5 +1,5 @@
 import { useState } from "react"
-export default function NewItemForm({ }) {
+export default function NewItemForm({ addTask }) {
     const [list, setList] = useState('');
     function handleSubmit(e) {
         e.preventDefault()

@@ -8,7 +8,7 @@ function App() {
 
   const [tasks, setTasks] = useState(['studiare react', 'studiare JavaScript', 'studiare CSS']);
 
-
+  function addTask(newTask) { setTasks([...tasks, newTask]) }
 
   function handleClick(i) {
     const taskFiltrate = tasks.filter((task, index) => index != i)
@@ -22,7 +22,7 @@ function App() {
       <div className='container'>
         <div className='card'>
           <div className="card-body">
-            <NewItemForm />
+            <NewItemForm addTask={addTask} />
 
             <ListCard />
 
